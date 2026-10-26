@@ -1,11 +1,19 @@
 # Solana Authority Inspector
 
-![Solana Authority Inspector dashboard](docs/screenshot.png)
+![Solana Authority Inspector dashboard](https://raw.githubusercontent.com/royalpinto007/solana-authority-inspector/main/docs/screenshot.png)
 
 [![CI](https://github.com/royalpinto007/solana-authority-inspector/actions/workflows/ci.yml/badge.svg)](https://github.com/royalpinto007/solana-authority-inspector/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 Paste a Solana token mint address. Read its authorities, token program and configuration directly from chain, with plain explanations and an exportable snapshot.
+
+## Run with npm
+
+Requires Node.js 22.18+.
+
+```sh
+npx solana-authority-inspector
+```
 
 ## Run locally
 
@@ -42,8 +50,8 @@ npx playwright install chromium
 npm run test:e2e
 ```
 
-![How a local inspection reads Solana RPC](docs/architecture.svg)
+![How a local inspection reads Solana RPC](https://raw.githubusercontent.com/royalpinto007/solana-authority-inspector/main/docs/architecture.svg)
 
 [Architecture](docs/architecture.md) · [Local API](docs/api.md) · [Contributing](CONTRIBUTING.md) · [Feedback](https://github.com/royalpinto007/solana-authority-inspector/issues/new?template=feedback.yml)
 
-MIT licensed. Not published to npm.
+MIT licensed. [Available on npm](https://www.npmjs.com/package/solana-authority-inspector).

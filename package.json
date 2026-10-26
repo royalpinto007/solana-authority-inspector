@@ -1,7 +1,6 @@
 {
   "name": "solana-authority-inspector",
   "version": "0.1.0",
-  "private": true,
   "description": "A read-only, local-first Solana token mint authority inspector.",
   "type": "module",
   "license": "MIT",
@@ -20,7 +19,9 @@
     "typecheck": "tsc --noEmit",
     "test": "tsx --test tests/*.test.ts",
     "test:e2e": "playwright test",
-    "check": "npm run format:check && npm run lint && npm run typecheck && npm test && npm run build"
+    "check": "npm run format:check && npm run lint && npm run typecheck && npm test && npm run build",
+    "prepack": "npm run build",
+    "package:check": "npm run build && node scripts/check-package.mjs"
   },
   "dependencies": {
     "express": "^5.3.0",
@@ -46,7 +47,7 @@
     "type": "git",
     "url": "git+https://github.com/royalpinto007/solana-authority-inspector.git"
   },
-  "homepage": "https://github.com/royalpinto007/solana-authority-inspector#readme",
+  "homepage": "https://www.npmjs.com/package/solana-authority-inspector",
   "bugs": {
     "url": "https://github.com/royalpinto007/solana-authority-inspector/issues"
   },
@@ -58,6 +59,23 @@
     "token-2022",
     "developer-tools",
     "local-first",
-    "typescript"
+    "typescript",
+    "cli",
+    "spl-token"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "bin": {
+    "solana-authority-inspector": "dist/cli.js"
+  },
+  "files": [
+    "dist/",
+    "docs/*.md",
+    "docs/*.svg",
+    "docs/screenshot.png",
+    "CONTRIBUTING.md",
+    "CHANGELOG.md"
   ]
 }
