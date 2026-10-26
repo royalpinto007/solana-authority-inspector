@@ -535,7 +535,10 @@ function renderRecent(): void {
     );
     button.type = "button";
     button.title = address;
-    button.setAttribute("aria-label", `Inspect recent mint ${address}`);
+    button.setAttribute(
+      "aria-label",
+      `Inspect recent mint ${address.slice(0, 4)}…${address.slice(-4)}: ${address}`,
+    );
     button.addEventListener("click", () => {
       addressInput.value = address;
       void inspectLive();
