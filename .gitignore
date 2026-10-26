@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.env*
+!.env.example
+*.pem
+*.key
+.npmrc
+*.tgz
+*.log
+*.mp4
+*.webm
+__pycache__/
+test-results/
+playwright-report/
+coverage/
+.codebase-memory/

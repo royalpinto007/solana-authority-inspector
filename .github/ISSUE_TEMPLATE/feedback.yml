@@ -1,0 +1,22 @@
+name: Product feedback
+description: Share what worked, what was confusing, or what is missing.
+labels: [feedback]
+body:
+  - type: textarea
+    id: task
+    attributes:
+      label: What were you trying to understand?
+      description: Mention the field or lookup flow you used.
+    validations:
+      required: true
+  - type: textarea
+    id: experience
+    attributes:
+      label: What worked or got in your way?
+      description: Screenshots help. Share public addresses only, never keys or environment files.
+    validations:
+      required: true
+  - type: textarea
+    id: improvement
+    attributes:
+      label: What would make it better?

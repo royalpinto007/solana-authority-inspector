@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="680" viewBox="0 0 1280 680" role="img" aria-labelledby="title description">
+  <title id="title">Solana Authority Inspector architecture</title>
+  <desc id="description">A browser talks to a local Express API. The API validates the input, reads the selected official Solana RPC, decodes the mint and returns a snapshot. Synthetic examples use the same decoder without contacting RPC. JSON exports and recent addresses stay in the browser.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#526781"/>
+    </marker>
+  </defs>
+  <rect width="1280" height="680" rx="24" fill="#f4f7fb"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="56" y="61" font-size="15" font-weight="700" letter-spacing="2" fill="#3264c7">SOLANA AUTHORITY INSPECTOR</text>
+    <text x="56" y="110" font-size="34" font-weight="700" fill="#152641">One local app. Read-only chain data.</text>
+    <text x="56" y="146" font-size="19" fill="#52637b">No wallet, database, API key or transaction submission.</text>
+
+    <rect x="40" y="188" width="794" height="338" rx="20" fill="#eaf0f8" stroke="#cad7e8" stroke-width="2" stroke-dasharray="6 6"/>
+    <text x="62" y="219" font-size="14" font-weight="700" letter-spacing="1.5" fill="#52637b">YOUR COMPUTER</text>
+
+    <rect x="60" y="244" width="286" height="244" rx="14" fill="#ffffff" stroke="#ccd7e5"/>
+    <rect x="60" y="244" width="6" height="244" rx="3" fill="#3264c7"/>
+    <text x="86" y="285" font-size="24" font-weight="700" fill="#152641">Browser dashboard</text>
+    <text x="86" y="321" font-size="17" fill="#52637b">Mint address + network</text>
+    <text x="86" y="350" font-size="17" fill="#52637b">Authorities and extensions</text>
+    <path d="M 86 372 H 320" stroke="#e2e8f0"/>
+    <text x="86" y="404" font-size="17" fill="#152641">JSON download</text>
+    <text x="86" y="433" font-size="17" fill="#152641">8 recent addresses locally</text>
+    <text x="86" y="463" font-size="14" fill="#52637b">No automatic metadata fetches</text>
+
+    <path d="M 354 324 H 446" fill="none" stroke="#526781" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="398" y="297" font-size="14" text-anchor="middle" fill="#52637b">same origin</text>
+    <path d="M 446 401 H 354" fill="none" stroke="#526781" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="398" y="433" font-size="14" text-anchor="middle" fill="#52637b">snapshot</text>
+
+    <rect x="456" y="244" width="354" height="244" rx="14" fill="#152641"/>
+    <text x="482" y="285" font-size="24" font-weight="700" fill="#ffffff">Local Express API</text>
+    <text x="482" y="321" font-size="17" fill="#d3e0f1">Validate address and network</text>
+    <text x="482" y="350" font-size="17" fill="#d3e0f1">Bound requests and RPC reads</text>
+    <path d="M 482 372 H 784" stroke="#43516a"/>
+    <text x="482" y="404" font-size="17" fill="#ffffff">Verify owner and mint fields</text>
+    <text x="482" y="433" font-size="17" fill="#ffffff">Keep exact supply as a string</text>
+    <text x="482" y="463" font-size="14" fill="#afc1d9">Loopback only. No server persistence.</text>
+
+    <path d="M 819 324 H 906" fill="none" stroke="#526781" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="863" y="297" font-size="14" text-anchor="middle" fill="#52637b">HTTPS</text>
+    <path d="M 906 401 H 819" fill="none" stroke="#526781" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="863" y="433" font-size="14" text-anchor="middle" fill="#52637b">account</text>
+
+    <rect x="918" y="244" width="304" height="244" rx="14" fill="#ffffff" stroke="#ccd7e5"/>
+    <rect x="918" y="244" width="6" height="244" rx="3" fill="#197c74"/>
+    <text x="944" y="285" font-size="24" font-weight="700" fill="#152641">Official Solana RPC</text>
+    <text x="944" y="321" font-size="17" fill="#52637b">Mainnet or Devnet</text>
+    <text x="944" y="350" font-size="17" fill="#52637b">Fixed public endpoints</text>
+    <path d="M 944 372 H 1196" stroke="#e2e8f0"/>
+    <text x="944" y="404" font-size="19" font-weight="700" fill="#197c74">getAccountInfo</text>
+    <text x="944" y="433" font-size="17" fill="#152641">jsonParsed · confirmed</text>
+    <text x="944" y="463" font-size="14" fill="#52637b">Public RPC rate limits apply</text>
+
+    <rect x="56" y="558" width="1166" height="74" rx="12" fill="#e4efec"/>
+    <circle cx="86" cy="595" r="5" fill="#197c74"/>
+    <text x="104" y="590" font-size="17" font-weight="700" fill="#185c57">Offline examples</text>
+    <text x="104" y="614" font-size="16" fill="#366963">Synthetic fixtures → same mint decoder → labeled snapshot. No RPC request.</text>
+    <text x="1188" y="601" font-size="16" text-anchor="end" fill="#366963">A snapshot, not a safety verdict.</text>
+  </g>
+</svg>

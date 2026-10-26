@@ -1,0 +1,26 @@
+name: Bug report
+description: Report a reproducible problem.
+labels: [bug]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Include the steps to reproduce and what you expected.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, browser and Node.js version.
+  - type: input
+    id: lookup
+    attributes:
+      label: Mint and network
+      description: If relevant, include the public address and Mainnet or Devnet.
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Redacted logs or screenshots only. Never share keys, tokens or environment files.

@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Read a Solana token mint's authorities and configuration. A free, open-source utility with live RPC reads and offline examples."
+    />
+    <meta name="theme-color" content="#f2f5f9" />
+    <title>Solana Authority Inspector</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/app.js" type="module"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to inspector</a>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Solana Authority Inspector home">
+        <img src="/favicon.svg" width="36" height="36" alt="" />
+        <span
+          >Authority Inspector<span class="brand-network">Solana</span></span
+        >
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="/guide.html">Guide</a>
+        <a href="/architecture.html">Architecture</a>
+        <a
+          class="github-link"
+          href="https://github.com/royalpinto007/solana-authority-inspector"
+          aria-label="GitHub repository"
+          >GitHub<svg class="icon" aria-hidden="true">
+            <use href="/icons.svg#external" /></svg
+        ></a>
+      </nav>
+    </header>
+    <main id="main" class="workbench">
+      <section class="query-section" aria-labelledby="page-title">
+        <div class="intro">
+          <div>
+            <h1 id="page-title">Inspect a Solana token mint</h1>
+            <p>See who can mint new tokens and freeze token accounts.</p>
+          </div>
+          <span class="read-only"
+            ><span class="status-dot"></span>Read-only</span
+          >
+        </div>
+        <form id="inspect-form" novalidate>
+          <div class="query-controls">
+            <div class="field address-field">
+              <label for="mint-address">Mint address</label>
+              <div class="input-wrap">
+                <svg class="icon input-icon" aria-hidden="true">
+                  <use href="/icons.svg#search" /></svg
+                ><input
+                  id="mint-address"
+                  name="address"
+                  autocomplete="off"
+                  autocapitalize="off"
+                  spellcheck="false"
+                  placeholder="Enter a public Solana mint address"
+                  aria-describedby="input-hint message"
+                  required
+                />
+              </div>
+            </div>
+            <div class="field network-field">
+              <label for="network">Network</label>
+              <div class="select-wrap">
+                <select id="network" name="network">
+                  <option value="mainnet-beta">Mainnet</option>
+                  <option value="devnet">Devnet</option></select
+                ><svg class="icon" aria-hidden="true">
+                  <use href="/icons.svg#chevron" />
+                </svg>
+              </div>
+            </div>
+            <button id="inspect-button" class="button primary" type="submit">
+              Inspect mint<svg class="icon" aria-hidden="true">
+                <use href="/icons.svg#search" />
+              </svg>
+            </button>
+          </div>
+          <div class="query-meta">
+            <p id="input-hint">
+              A mint address identifies the token, not a wallet.
+            </p>
+            <button id="cancel-button" class="text-button" type="button" hidden>
+              Cancel lookup
+            </button>
+          </div>
+          <p id="message" class="message" role="status" aria-live="polite"></p>
+        </form>
+        <div class="shortcuts" aria-label="Live Mainnet shortcuts">
+          <span>Try a live mint</span
+          ><button type="button" data-mint="usdc">USDC</button
+          ><button type="button" data-mint="wsol">Wrapped SOL</button
+          ><button type="button" data-mint="pyusd">
+            PYUSD<span class="chip-detail">Token-2022</span>
+          </button>
+        </div>
+        <div id="recent" class="recent" hidden>
+          <span>Recent</span>
+          <div id="recent-list"></div>
+          <button type="button" id="clear-history" class="text-button">
+            Clear
+          </button>
+        </div>
+      </section>
+      <section
+        id="inspection"
+        class="inspection empty-state"
+        aria-label="Mint inspection"
+        tabindex="-1"
+      >
+        <div class="empty-map" aria-hidden="true">
+          <div class="empty-node">
+            <svg class="icon"><use href="/icons.svg#mint" /></svg>Token mint
+          </div>
+          <div class="branch-lines"></div>
+          <div class="empty-roles">
+            <span
+              ><svg class="icon"><use href="/icons.svg#key" /></svg>Mint
+              authority</span
+            ><span
+              ><svg class="icon"><use href="/icons.svg#snowflake" /></svg>Freeze
+              authority</span
+            >
+          </div>
+        </div>
+        <h2>Start with a mint address</h2>
+        <p>
+          Read its current authorities, token program and supply.<br />No wallet
+          connection or transaction needed.
+        </p>
+      </section>
+      <section class="examples-section" aria-labelledby="examples-title">
+        <div class="examples-intro">
+          <h2 id="examples-title">Learn with an example</h2>
+          <p>Offline snapshots. No RPC request.</p>
+        </div>
+        <div id="examples" class="example-list" aria-live="polite">
+          <span class="examples-loading">Loading examples…</span>
+        </div>
+      </section>
+      <footer class="site-footer">
+        <span>Public chain data. No keys, no signing.</span
+        ><a href="/guide.html#read-the-fields"
+          >What do these authorities mean?</a
+        >
+      </footer>
+    </main>
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+    <noscript
+      ><p class="noscript">
+        Enable JavaScript to inspect a mint. The
+        <a href="/guide.html">guide</a> works without JavaScript.
+      </p></noscript
+    >
+  </body>
+</html>
