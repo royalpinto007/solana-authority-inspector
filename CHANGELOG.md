@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased]
+## [0.1.0] - 2026-10-26
 
 ### Added
 
@@ -9,3 +9,5 @@
 - Synthetic offline examples, recent lookup addresses and JSON exports.
 - Local dashboard, guide, API documentation and architecture diagram.
 - Automated domain, RPC, API and browser checks.
+
+- Installable npm CLI with packaged dashboard assets and a clean-install smoke check.
