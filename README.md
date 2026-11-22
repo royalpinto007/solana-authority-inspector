@@ -1,6 +1,11 @@
 # Solana Authority Inspector
 
-![Solana Authority Inspector dashboard](https://raw.githubusercontent.com/royalpinto007/solana-authority-inspector/main/docs/screenshot.png)
+<picture>
+  <source media="(prefers-reduced-motion: reduce)" srcset="https://raw.githubusercontent.com/royalpinto007/solana-authority-inspector/main/docs/screenshot.png">
+  <img src="https://raw.githubusercontent.com/royalpinto007/solana-authority-inspector/main/docs/demo-preview.webp" alt="Inspecting a token mint and its authorities">
+</picture>
+
+[Download the 27-second demo (MP4)](https://github.com/royalpinto007/solana-authority-inspector/releases/download/project-demo/solana-authority-inspector-demo.mp4)
 
 [![CI](https://github.com/royalpinto007/solana-authority-inspector/actions/workflows/ci.yml/badge.svg)](https://github.com/royalpinto007/solana-authority-inspector/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
